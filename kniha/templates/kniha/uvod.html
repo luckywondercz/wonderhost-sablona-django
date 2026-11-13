@@ -1,0 +1,33 @@
+{% load static %}<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kniha návštěv</title>
+  <link rel="stylesheet" href="{% static 'kniha/styl.css' %}">
+</head>
+<body>
+  <main>
+    <h1>Kniha návštěv</h1>
+    <p class="tlumeny">Ukázková aplikace v Djangu s databází PostgreSQL. Upravte ji v aplikaci <code>kniha</code>.</p>
+
+    {% for zprava in messages %}<p class="zprava">{{ zprava }}</p>{% endfor %}
+
+    <form method="post" class="formular">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Přidat vzkaz</button>
+    </form>
+
+    <h2>Vzkazy</h2>
+    {% for v in vzkazy %}
+      <article class="vzkaz">
+        <p class="hlavicka"><strong>{{ v.jmeno }}</strong> · {{ v.vytvoreno|date:"j. E Y H:i" }}</p>
+        <p>{{ v.text|linebreaksbr }}</p>
+      </article>
+    {% empty %}
+      <p class="tlumeny">Zatím tu nic není. Buďte první.</p>
+    {% endfor %}
+  </main>
+</body>
+</html>

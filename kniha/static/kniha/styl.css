@@ -1,0 +1,21 @@
+:root {
+  --text: #1e293b; --tlumeny: #64748b; --pozadi: #f8fafc; --plocha: #fff; --barva: #4338ca; --okraj: #e2e8f0;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --text: #e2e8f0; --tlumeny: #94a3b8; --pozadi: #0f172a; --plocha: #1e293b; --barva: #a5b4fc; --okraj: #334155; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text); background: var(--pozadi); }
+main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem; }
+h1 { margin: 0 0 0.5rem; }
+.tlumeny { color: var(--tlumeny); }
+.formular { background: var(--plocha); border: 1px solid var(--okraj); border-radius: 0.75rem; padding: 1.25rem; margin: 2rem 0; }
+.formular label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.formular input, .formular textarea { width: 100%; padding: 0.6rem; border: 1px solid var(--okraj); border-radius: 0.4rem; font: inherit; background: var(--pozadi); color: var(--text); }
+button { padding: 0.65rem 1.1rem; border: 0; border-radius: 0.4rem; background: var(--barva); color: var(--pozadi); font: inherit; font-weight: 600; cursor: pointer; }
+.zprava { background: var(--plocha); border-left: 4px solid var(--barva); padding: 0.75rem 1rem; }
+.vzkaz { border-bottom: 1px solid var(--okraj); padding: 0.75rem 0; }
+.vzkaz p { margin: 0.25rem 0; }
+.vzkaz .hlavicka { color: var(--tlumeny); font-size: 0.95rem; }
+code { font-size: 0.92em; }

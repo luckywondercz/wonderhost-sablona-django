@@ -1,0 +1,4 @@
+django>=6.1,<6.2
+dj-database-url>=3.1
+psycopg[binary]>=3.3
+gunicorn>=27.0
